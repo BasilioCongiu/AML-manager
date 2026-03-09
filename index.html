@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>AML Compliance Manager</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>AML Compliance Manager</h1>
+    </header>
+
+    <main>
+        <section id="aggiungi-cliente">
+            <h2>Aggiungi Nuovo Cliente</h2>
+            <form id="form-nuovo-cliente">
+                <label for="nomeStudio">Nome Studio/Cliente:</label>
+                <input type="text" id="nomeStudio" required>
+
+                <label for="dataUltimoControllo">Data Ultimo Controllo:</label>
+                <input type="date" id="dataUltimoControllo" required>
+
+                <label for="profiloRischio">Profilo di Rischio:</label>
+                <select id="profiloRischio">
+                    <option value="Alto">Alto (12 mesi)</option>
+                    <option value="Medio">Medio (18 mesi)</option>
+                    <option value="Basso">Basso (30 mesi)</option>
+                </select>
+
+                <fieldset>
+                    <legend>Checklist Documenti:</legend>
+                    <label><input type="checkbox" id="visura"> Visura Certificato</label>
+                    <label><input type="checkbox" id="dichiarazione"> Dichiarazione del Cliente</label>
+                    <label><input type="checkbox" id="valutazioneRischio"> Scheda Valutazione Rischio</label>
+                    <label><input type="checkbox" id="controlloPeriodico"> Scheda Controllo Periodico</label>
+                </fieldset>
+
+                <button type="submit">Aggiungi Cliente</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Dashboard Clienti</h2>
+            <div id="dashboard-clienti"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
