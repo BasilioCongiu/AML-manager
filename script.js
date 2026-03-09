@@ -1,4 +1,3 @@
-// 1. DEFINIZIONE DELLA CLASSE (Deve stare per prima!)
 class Cliente {
     constructor(nomeStudio, dataUltimoControllo, profiloRischio, checklist) {
         this.nomeStudio = nomeStudio;
@@ -26,7 +25,6 @@ class Cliente {
     }
 }
 
-// 2. FUNZIONI DI SUPPORTO
 function salvaDati() { 
     localStorage.setItem('clientiStudio', JSON.stringify(clientiStudio)); 
 }
@@ -37,10 +35,10 @@ function caricaDati() {
     return JSON.parse(dati).map(c => new Cliente(c.nomeStudio, c.dataUltimoControllo, c.profiloRischio, c.checklist));
 }
 
-// 3. INIZIALIZZAZIONE DATI (Ora la classe è conosciuta)
+
 let clientiStudio = caricaDati();
 
-// 4. LOGICA UI
+
 function renderizzaClienti() {
     const container = document.getElementById('dashboard-clienti');
     container.innerHTML = '';
@@ -73,7 +71,6 @@ function renderizzaClienti() {
     });
 }
 
-// 5. EVENTI
 document.getElementById('form-nuovo-cliente').addEventListener('submit', (e) => {
     e.preventDefault();
     const nuovo = new Cliente(
