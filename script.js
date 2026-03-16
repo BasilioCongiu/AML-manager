@@ -1,3 +1,5 @@
+// Definizione della classe: deve precedere l'inizializzazione dei dati.Vedi hoisting
+
 class Cliente {
     constructor(nomeStudio, dataUltimoControllo, profiloRischio, checklist) {
         this.nomeStudio = nomeStudio;
@@ -26,8 +28,12 @@ class Cliente {
 }
 
 function salvaDati() { 
+    // TODO: Aggiungere validazione dei dati prima del salvataggio
     localStorage.setItem('clientiStudio', JSON.stringify(clientiStudio)); 
 }
+
+// TODO: Centralizzare la gestione dello stato (aggiunta/rimozione) 
+// invece di manipolare l'array 'clientiStudio' direttamente.
 
 function caricaDati() {
     const dati = localStorage.getItem('clientiStudio');
